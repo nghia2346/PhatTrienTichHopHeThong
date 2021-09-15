@@ -8,9 +8,7 @@ public class Bai4 {
         n=sc.nextInt();
         tong=0;
         for(int i=0;i<=n;i++){
-      
             tong=tong+i;
-
     }
     System.out.println("Tong tu 1 toi n la " + tong);
 
