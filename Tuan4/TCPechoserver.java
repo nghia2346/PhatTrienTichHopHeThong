@@ -19,7 +19,7 @@ public class TCPechoserver {
             int ch=0;
             while (true) {
                 ch = is.read();
-                if(ch ==1) break;
+                if(ch == -1) break;
                 System.out.println((char)ch);
                 os.write(ch);
             }
