@@ -34,7 +34,7 @@ public class UDPchatclient {
                 ds.receive(incoming); // Chờ nhận dữ liệu từ EchoServer gởi về
  
                 // Đổi dữ liệu nhận được dạng mảng bytes ra chuỗi và in ra màn hình
-                System.out.println("Server: " + new String(incoming.getData(), 0, incoming.getLength()));
+                System.out.println("Recevied: " + new String(incoming.getData(), 0, incoming.getLength()));
             }
         } catch (IOException e) {
             System.err.println(e);
