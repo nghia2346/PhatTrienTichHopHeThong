@@ -13,7 +13,7 @@ public class  TCPchatclient {
 
             Scanner sc = new Scanner(System.in);
             while (true) {
-                System.out.println("\n Nhập tin nhắn");
+                System.out.println("\n Nhap tin nhan");
                 out.writeUTF(sc.nextLine());
                 out.flush();
 
