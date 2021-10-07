@@ -16,6 +16,7 @@ public class TCPdateserver {
                     if (ch=="exit") {
                         break;
                     }
+                    Date
                      
                 }
             } catch (Exception e) {
