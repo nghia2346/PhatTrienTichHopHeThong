@@ -18,7 +18,7 @@ public class TCPchatserver {
             Scanner sc = new Scanner(System.in);
             while (true) {
                 String str = in.readUTF();
-
+                
                 if (str.equalsIgnoreCase("out")) {
                     break;
                 } else {
