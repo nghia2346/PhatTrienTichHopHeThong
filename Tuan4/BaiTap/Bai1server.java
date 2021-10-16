@@ -4,6 +4,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Bai1server {
     public static void main(String[] args) {
@@ -13,40 +14,41 @@ public class Bai1server {
             Socket sk = ss.accept();
             DataInputStream in = new DataInputStream(sk.getInputStream());
             DataOutputStream out = new DataOutputStream(sk.getOutputStream());
+            Scanner sc = new Scanner(System.in);
             while (true) {
-              int ch= in.read();
-                    if(ch == '@') 
-                    break;
+              String ch = in.readUTF();
+              if (ch.equalsIgnoreCase("out")) {
+                break;}
                     String kq = "" ;
                 switch (ch) {
-                    case '0':
+                    case "0":
                         kq = "Khong";
                         break;
-                        case '1':
+                    case "1":
                         kq = "Mot";
                         break;
-                        case '2':
+                    case "2":
                         kq = "Hai";
                         break;  
-                        case '3':
+                     case "3":
                         kq = "Ba";
                         break;
-                          case '4':
+                      case "4":
                         kq = "Bon";
                         break;  
-                        case '5':
+                     case "5":
                         kq = "Nam";
                         break;  
-                        case '6':
+                     case "6":
                         kq = "Sau";
                         break;  
-                        case '7':
+                     case "7":
                         kq = "Bay";
                         break; 
-                         case '8':
+                      case "8":
                         kq = "Tam";
                         break;  
-                        case '9':
+                     case "9":
                         kq = "Chin";
                         break;
                     default:
@@ -54,6 +56,7 @@ public class Bai1server {
                       
                 }
                 out.writeUTF(kq);
+                out.flush();
             }
         } catch (Exception e) {
            
