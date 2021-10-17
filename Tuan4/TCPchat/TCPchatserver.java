@@ -24,7 +24,7 @@ public class TCPchatserver {
                 } else {
                     System.out.println("--Client:" + str);
                 }
-                System.out.println("\n nhap tin nhan:");
+                System.out.println("\nNhap tin nhan:");
                 out.writeUTF(sc.nextLine());
                 out.flush();
             }

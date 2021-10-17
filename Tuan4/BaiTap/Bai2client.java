@@ -13,31 +13,34 @@ import javax.sound.sampled.Port;
 public class Bai2client {
     public static void main(String[] args) {
         int port;
-        try {
-            
-            Scanner sc = new Scanner(System.in);
+        String ip;
+        Scanner sc = new Scanner(System.in);
+        try { 
+                System.out.println("Nhap dia chi ip");
+                ip= sc.nextLine();
             do {
                 System.out.println("Nhap port cua server");
                 port = sc.nextInt(); 
-            } while (port == 5678);
-                    System.out.println("Client connected");
-                 Socket sk= new Socket("127.0.0.1",port);
+            } while (port !=5678);
+            Socket sk= new Socket(ip,port);
+             System.out.println("Client connected");
             DataInputStream in = new DataInputStream(sk.getInputStream());
             DataOutputStream out = new DataOutputStream(sk.getOutputStream());
-        
+
                 while (true) {
                     System.out.println("Nhap tin nhan");
                     out.writeUTF(sc.nextLine());
-                    out.flush();
+                       out.flush();
                     String chat = in.readUTF();
                         if (chat.equalsIgnoreCase("out")) {
-                            
-                        } else {
-                            System.out.println("Server:"+ chat);
+                            break;
+                        } else { 
+                            System.out.println("Tin nhan cua Server:\n"+ chat);
                         }
-                }
+
+                }         
         } catch (Exception e) {
-            System.out.println("loi");
+            System.out.println("Nhap sai");
         }
     }
 }
