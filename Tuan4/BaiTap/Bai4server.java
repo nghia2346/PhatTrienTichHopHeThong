@@ -4,6 +4,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.sql.Date;
 
 public class Bai4server {
     public static void main(String[] args) {
@@ -14,8 +15,20 @@ public class Bai4server {
             Socket sk = ss.accept();
             DataInputStream in = new DataInputStream(sk.getInputStream());
             DataOutputStream out = new DataOutputStream(sk.getOutputStream());
+            while (true) {
+                String ch = in.readUTF();
+                Date dt= new Date();
+
+                    switch (ch) {
+                        case "1":
+                            Simple
+                            break;
+                    
+                        default:
+                            break;
+                    }
+            }
         } catch (Exception e) {
-            
         }
     }
 }

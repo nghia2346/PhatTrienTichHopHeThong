@@ -20,6 +20,9 @@ public class Bai4client {
         DataInputStream in = new DataInputStream(sk.getInputStream());
         DataOutputStream out = new DataOutputStream(sk.getOutputStream());
 
+        while (true) {
+            System.out.println("Chon yeu cầu của bạn");
+        }
         } catch (Exception e) {
            
         }
