@@ -6,22 +6,23 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Bai1server {
-    public static void main(String[] args) {
+/**
+ * Bai1Thread
+ */
+public class Bai1Thread extends Thread {
+        Socket s;
+        Bai1Thread(Socket s){
+            this.s=s;
+        }
+    public void run(){
         try {
-            ServerSocket ss = new ServerSocket(2611);
-            System.out.println("Server created");
-            Socket sk = ss.accept();
-            DataInputStream in = new DataInputStream(sk.getInputStream());
-            DataOutputStream out = new DataOutputStream(sk.getOutputStream());
+            DataInputStream in = new DataInputStream(s.getInputStream());
+            DataOutputStream out = new DataOutputStream(s.getOutputStream());
             Scanner sc = new Scanner(System.in);
             while (true) {
-                Socket s = ss.accept();
-                Bai1Thread p = new Bai1Thread(s);
-                p.start();
-             int ch = in.read();
-          
-                    String kq = "" ;
+              int ch = in.read();
+             
+                String kq = "" ;
                 switch (ch) {
                     case 0:
                         kq = "Khong";
@@ -64,4 +65,4 @@ public class Bai1server {
            
         }
     }
-}
+    }

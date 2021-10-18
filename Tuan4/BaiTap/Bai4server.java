@@ -18,23 +18,23 @@ public class Bai4server {
             DataOutputStream out = new DataOutputStream(sk.getOutputStream());
       
             while (true) {
-                String ch = in.readUTF();
+                int ch = in.read();
                 Date dt = new Date();
                     String kq="";
                     switch (ch) {
-                        case "1":
+                        case 1:
                             SimpleDateFormat  dft = new SimpleDateFormat("HH:mm:ss");
                                 kq =dft.format(dt);
                             break;
-                            case "2":
+                            case 2:
                             SimpleDateFormat  dfd = new SimpleDateFormat("E dd.MM.yyyy");
                                 kq =dfd.format(dt);
                             break;
-                            case "3":
+                            case 3:
                             SimpleDateFormat df = new SimpleDateFormat("E dd.MM.yyyy 'at' HH:mm:ss");
                                 kq= df.format(dt);
                                 break;
-                            case "4":
+                            case 4:
                                 kq="4";
                                 break;
                         default:

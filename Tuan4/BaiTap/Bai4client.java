@@ -25,16 +25,17 @@ public class Bai4client {
         System.out.println("4. Exit");
 
         while (true) {
+            sc.nextLine();
             System.out.println("Chon Yeu Cau:");
-            String n = sc.nextLine();
+            int n = sc.nextInt();
 
-            out.writeUTF(n);
+            out.write(n);
     
-            n = in.readUTF();
-            if (n.equalsIgnoreCase("4")) {
+            String kq = in.readUTF();
+            if (kq.equalsIgnoreCase("4")) {
                 break;
             } else {
-                System.out.println("Ket qua la :" + n);
+                System.out.println("Ket qua la :" + kq);
             }
         }
         } catch (Exception e) {

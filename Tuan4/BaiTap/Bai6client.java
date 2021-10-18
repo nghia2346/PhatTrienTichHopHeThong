@@ -2,43 +2,59 @@ package BaiTap;
 
 import java.net.Socket;
 import java.util.Scanner;
+
+import javax.sound.sampled.Port;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 
 public class Bai6client {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String ip;
+        int port;
+        System.out.println("Nhap dia chi ip");
+        ip = sc.nextLine();
+        System.out.println("Nhap port");
+        port = sc.nextInt();
         try {
-            Socket sk = new Socket("127.0.0.1",3333);
+            Socket sk = new Socket(ip,port);
             System.out.println("Client connected");
             DataInputStream in = new DataInputStream(sk.getInputStream());
             DataOutputStream out =  new DataOutputStream(sk.getOutputStream());
-            Scanner sc = new Scanner(System.in);
+          
             System.out.println("--------Menu---------");
             System.out.println("1. Tong 1+3+5+7+...+(2n+1) ");
             System.out.println("2. Tong 1*2 + 2*3+...+n*(n+1)");
             System.out.println("3. Bieu Thuc 1-2+3-4+..+(2n+1)  ");
+            System.out.println("4. Exit");
+
+      
             while (true) {
-                
-                System.out.println("Nhap yeu cau");
-                String ch=sc.nextLine();
-                out.writeUTF(ch);
-                out.flush();
-                System.out.println("Nhap n");
-                int n= sc.nextInt();
-                out.writeInt(n);
-                out.flush();
-                int Tong= in.readInt();
-                int Tong2= in.readInt();
-                float Tong3=in.readFloat();
-                out.writeInt(n);
-                if (ch.equalsIgnoreCase("1")) {
-                    System.out.println("Ket qua la: "+Tong);
-                } else if (ch.equalsIgnoreCase("2")) {
-                    System.out.println("Ket qua la: "+Tong2);
-                } else if (ch.equalsIgnoreCase("3")) {
-                    System.out.println("Ket Qua la: "+Tong3);
-                }       
-                
+                        int ch;
+                        sc.nextLine();
+                   System.out.println("Nhap yeu cau");
+                        ch=   sc.nextInt();
+                        System.in.skip(2);
+                        out.write(ch);
+                    
+                    System.out.println("Nhap n");
+                    out.writeInt(sc.nextInt());
+              
+                    int Tong= in.readInt();
+                    int Tong2= in.readInt();
+                    int Tong3=in.readInt();
+
+                    if (ch==1) {
+                        System.out.println("Ket qua la:\n"+Tong);
+                    } else if (ch==2) {
+                        System.out.println("Ket qua la:\n"+Tong2);
+                    } else if (ch==3) {
+                        System.out.println("Ket Qua la:\n"+Tong3);
+                    } else if(ch==4){
+                        break;
+                    }
+
              }} catch (Exception e) {
             System.out.println("Loi");
         }

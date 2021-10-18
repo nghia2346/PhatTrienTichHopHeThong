@@ -28,6 +28,7 @@ public class Bai2client {
             DataOutputStream out = new DataOutputStream(sk.getOutputStream());
 
                 while (true) {
+                    sc.nextLine();
                     System.out.println("Nhap tin nhan");
                     out.writeUTF(sc.nextLine());
                        out.flush();

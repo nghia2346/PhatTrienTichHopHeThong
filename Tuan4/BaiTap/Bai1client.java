@@ -15,9 +15,9 @@ public class Bai1client {
         Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.println("Nhap so tu 0 den 9");
-            String ch=  sc.nextLine();
+            int ch=  sc.nextInt();
             out.flush();
-            out.writeUTF(ch);
+            out.write(ch);
             String kq = in.readUTF();
             System.out.println("Chuyen qua ki tu :"+ kq);
         }
