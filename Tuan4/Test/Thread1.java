@@ -25,9 +25,9 @@ public class Thread1 extends Thread {
                 int n = in.readInt();
                 String ch;
                 if (songuyento(n)) {
-                    ch="n la so nguyen to";
+                    ch=n+" la so nguyen to";
                 } else {
-                    ch="n khong phai la so nguyen to";
+                    ch=n+" khong phai la so nguyen to";
                 }
                 out.writeUTF(ch);
             }
