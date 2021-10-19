@@ -22,22 +22,23 @@ public class Bai6client {
             System.out.println("Client connected");
             DataInputStream in = new DataInputStream(sk.getInputStream());
             DataOutputStream out =  new DataOutputStream(sk.getOutputStream());
-          
-            System.out.println("--------Menu---------");
-            System.out.println("1. Tong 1+3+5+7+...+(2n+1) ");
-            System.out.println("2. Tong 1*2 + 2*3+...+n*(n+1)");
-            System.out.println("3. Bieu Thuc 1-2+3-4+..+(2n+1)  ");
-            System.out.println("4. Exit");
 
       
             while (true) {
+                System.out.println("--------Menu---------");
+                System.out.println("1. Tong 1+3+5+7+...+(2n+1) ");
+                System.out.println("2. Tong 1*2 + 2*3+...+n*(n+1)");
+                System.out.println("3. Bieu Thuc 1-2+3-4+..+(2n+1)  ");
+                System.out.println("4. Exit");
                         int ch;
                         sc.nextLine();
                    System.out.println("Nhap yeu cau");
                         ch=   sc.nextInt();
                         System.in.skip(2);
                         out.write(ch);
-                    
+                        if(ch==4){
+                            break;
+                        }
                     System.out.println("Nhap n");
                     out.writeInt(sc.nextInt());
               
@@ -51,8 +52,6 @@ public class Bai6client {
                         System.out.println("Ket qua la:\n"+Tong2);
                     } else if (ch==3) {
                         System.out.println("Ket Qua la:\n"+Tong3);
-                    } else if(ch==4){
-                        break;
                     }
 
              }} catch (Exception e) {
