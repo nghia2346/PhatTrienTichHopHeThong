@@ -10,14 +10,14 @@ import java.util.Scanner;
  * Bai1Thread
  */
 public class Bai1Thread extends Thread {
-        Socket s;
-        Bai1Thread(Socket s){
-            this.s=s;
+        Socket sk;
+        Bai1Thread(Socket sk){
+            this.sk=sk;
         }
     public void run(){
         try {
-            DataInputStream in = new DataInputStream(s.getInputStream());
-            DataOutputStream out = new DataOutputStream(s.getOutputStream());
+            DataInputStream in = new DataInputStream(sk.getInputStream());
+            DataOutputStream out = new DataOutputStream(sk.getOutputStream());
             Scanner sc = new Scanner(System.in);
             while (true) {
               int ch = in.read();

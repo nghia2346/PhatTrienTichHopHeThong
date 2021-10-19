@@ -13,36 +13,10 @@ public class Bai4server {
         try {
             ServerSocket ss = new ServerSocket(port);
             System.out.println("Server created:  " + port);
-            Socket sk = ss.accept();
-            DataInputStream in = new DataInputStream(sk.getInputStream());
-            DataOutputStream out = new DataOutputStream(sk.getOutputStream());
-      
             while (true) {
-                int ch = in.read();
-                Date dt = new Date();
-                    String kq="";
-                    switch (ch) {
-                        case 1:
-                            SimpleDateFormat  dft = new SimpleDateFormat("HH:mm:ss");
-                                kq =dft.format(dt);
-                            break;
-                            case 2:
-                            SimpleDateFormat  dfd = new SimpleDateFormat("E dd.MM.yyyy");
-                                kq =dfd.format(dt);
-                            break;
-                            case 3:
-                            SimpleDateFormat df = new SimpleDateFormat("E dd.MM.yyyy 'at' HH:mm:ss");
-                                kq= df.format(dt);
-                                break;
-                            case 4:
-                                kq="4";
-                                break;
-                        default:
-                            kq="Chon sai hay chon lai";
-                            break;
-                    
-                    }
-                    out.writeUTF(kq);
+                Socket sk= ss.accept();
+                Bai4Thread p = new Bai4Thread(sk);
+                p.start();
             }
         } catch (Exception e) {
         }

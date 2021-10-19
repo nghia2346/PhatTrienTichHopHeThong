@@ -22,7 +22,7 @@ public class TCPechoclient {
                 os.write(i);
                 int ch=is.read();
                 System.out.println((char)ch);
-                Thread.sleep(2000);
+                Thread1.sleep(2000);
             }
         } catch (IOException ie){
             System.out.println("Error: Can NOT create socket");
