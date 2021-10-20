@@ -41,18 +41,8 @@ public class Bai6client {
                         }
                     System.out.println("Nhap n");
                     out.writeInt(sc.nextInt());
-              
-                    int Tong= in.readInt();
-                    int Tong2= in.readInt();
-                    int Tong3=in.readInt();
-
-                    if (ch==1) {
-                        System.out.println("Ket qua la:\n"+Tong);
-                    } else if (ch==2) {
-                        System.out.println("Ket qua la:\n"+Tong2);
-                    } else if (ch==3) {
-                        System.out.println("Ket Qua la:\n"+Tong3);
-                    }
+                            int kq=in.readInt();
+                            System.out.println("Ket qua la:"+kq);
 
              }} catch (Exception e) {
             System.out.println("Loi");

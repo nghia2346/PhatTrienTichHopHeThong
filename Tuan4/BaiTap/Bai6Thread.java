@@ -16,8 +16,6 @@ public class Bai6Thread extends Thread {
             while (true) {
                 int ch = in.read();
                 int Tong =0;
-                int Tong2=0;
-                int Tong3= 0;
                 int n=in.readInt();
                  switch (ch) {
                      case 1:
@@ -27,14 +25,14 @@ public class Bai6Thread extends Thread {
                          break;
                          case 2:
                          for(int i=0;i<=n;i++){
-                            Tong2= Tong2 +(i*(i+1));
+                            Tong= Tong +(i*(i+1));
                         }
                              break;
                              case 3:
                              int t=-1;
                              for(int i=0;i<=n;i++){
                                 t=t*-1;
-                                Tong3=Tong3+(t*i);
+                                Tong=Tong+(t*i);
                             }
                                  break;
                                  case 4:
@@ -46,8 +44,6 @@ public class Bai6Thread extends Thread {
                  }
  
               out.writeInt(Tong);
-              out.writeInt(Tong2);
-              out.writeInt(Tong3);
             }
         } catch (Exception e) {
            
