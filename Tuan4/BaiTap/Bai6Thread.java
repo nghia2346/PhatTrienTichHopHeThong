@@ -21,7 +21,7 @@ public class Bai6Thread extends Thread {
                 int n=in.readInt();
                  switch (ch) {
                      case 1:
-                     for(int i=0;i<=n;i++){
+                     for(int i=0;i<n;i++){
                         Tong = Tong +(2*i+1);
                     }
                          break;
