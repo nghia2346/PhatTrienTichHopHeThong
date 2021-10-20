@@ -33,7 +33,7 @@ public class Bai6client {
                         int ch;
                         sc.nextLine();
                    System.out.println("Nhap yeu cau");
-                        ch=   sc.nextInt();
+                        ch =   sc.nextInt();
                         System.in.skip(2);
                         out.write(ch);
                         if(ch==4){
