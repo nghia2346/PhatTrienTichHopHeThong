@@ -12,6 +12,7 @@ public class CalcServer {
             Registry reg = LocateRegistry.getRegistry(7777);
             reg.bind("CalcObj", cInterface);
             System.out.println("Calc Registed");
+            
         } catch (Exception e) {
         }
     }
